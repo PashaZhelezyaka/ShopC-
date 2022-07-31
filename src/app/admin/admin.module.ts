@@ -8,6 +8,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { EditPageComponent } from './edit-page/edit-page.component';
 import { OrdersComponent } from './orders/orders.component';
 import { LoginLayoutComponent } from "../shared/login-layout/login-layout.component";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 
 
@@ -19,19 +20,20 @@ import { LoginLayoutComponent } from "../shared/login-layout/login-layout.compon
         EditPageComponent,
         OrdersComponent
   ],
-  imports: [
-    CommonModule, RouterModule.forChild([
-      { path: '', component: LoginLayoutComponent, children: [
-          { path: '', redirectTo: '/admin/login', pathMatch: 'full' },
-          { path: 'login', component: LoginPageComponent },
-          { path: 'add', component: AddPageComponent },
-          { path: 'dashboard', component: DashboardComponent },
-          { path: 'product/:id/edit', component: EditPageComponent },
-          { path: 'orders', component: OrdersComponent },
-        ]
-      }
-    ]
-  )]
+    imports: [
+        CommonModule, RouterModule.forChild([
+                {
+                    path: '', component: LoginLayoutComponent, children: [
+                        {path: '', redirectTo: '/admin/login', pathMatch: 'full'},
+                        {path: 'login', component: LoginPageComponent},
+                        {path: 'add', component: AddPageComponent},
+                        {path: 'dashboard', component: DashboardComponent},
+                        {path: 'product/:id/edit', component: EditPageComponent},
+                        {path: 'orders', component: OrdersComponent},
+                    ]
+                }
+            ]
+        ), ReactiveFormsModule, FormsModule]
 })
 
 export class AdminModule {
