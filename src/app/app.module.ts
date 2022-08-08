@@ -9,6 +9,7 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { ProductPageComponent } from './product-page/product-page.component';
 import { CartPageComponent } from './cart-page/cart-page.component';
 import { LoginLayoutComponent } from './shared/login-layout/login-layout.component';
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { LoginLayoutComponent } from './shared/login-layout/login-layout.compone
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule, HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
