@@ -7,10 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'my-app';
-  numb: string = "";
-  bool = true
-
-  clickBut(){
-    this.bool = !this.bool
-  }
 }
