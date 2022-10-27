@@ -13,5 +13,12 @@ export interface UserLoginAdmin {
   email: string,
   password: string,
   returnSecureToken: boolean
+}
 
+export interface Product {
+  type: string,
+  name: string,
+  photo: any,
+  information: any,
+  price: number
 }

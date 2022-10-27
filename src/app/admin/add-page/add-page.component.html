@@ -1,1 +1,64 @@
-<p>add-page works!</p>
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <h2>Add product</h2>
+
+  <div class="form-control">
+    <label>Type</label>
+    <select id="type" formControlName="type">
+      <option value="ASICminers">ASIC miners</option>
+      <option value="graphicCard">Graphic card</option>
+      <option value="matherboard">Matherboard</option>
+    </select>
+    <div>
+      <small *ngIf="form.controls['type'].touched &&
+       form.controls['type'].invalid">
+        Choose type
+      </small>
+    </div>
+  </div>
+
+  <div class="form-control">
+    <label>Name</label>
+    <input id="name" type="email" formControlName="name"/>
+    <div>
+      <small *ngIf="form.controls['name'].touched &&
+       form.controls['name'].invalid">
+        Enter name
+      </small>
+    </div>
+  </div>
+
+  <div class="form-control">
+    <label>Photo</label>
+    <input id="photo" type="photo" formControlName="photo"/>
+    <div>
+      <small *ngIf="form.controls['photo'].touched &&
+       form.controls['photo'].invalid">
+        Add a photo
+      </small>
+    </div>
+  </div>
+
+  <div class="form-control">
+    <label>Information</label>
+    <input id="info" type="info" formControlName="info"/>
+    <div>
+      <small *ngIf="form.controls['info'].touched &&
+       form.controls['info'].invalid">
+        Add information
+      </small>
+    </div>
+  </div>
+
+  <div class="form-control">
+    <label>Price</label>
+    <input id="price" type="price" formControlName="price"/>
+    <div>
+      <small *ngIf="form.controls['price'].touched &&
+       form.controls['price'].invalid">
+        Enter price
+      </small>
+    </div>
+    <button class="btn btn-primary btn-block" [disabled]="form.invalid" type="submit">Add product</button>
+  </div>
+
+</form>
